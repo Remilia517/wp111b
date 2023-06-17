@@ -6,7 +6,8 @@ function truthTable(n) {
   function enumerateTable(n, values) {
     if (n === 0) {
       console.log(values);
-    } else {
+    } 
+    else {
       values[n - 1] = 0;
       enumerateTable(n - 1, values);
   
