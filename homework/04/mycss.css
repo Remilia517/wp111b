@@ -1,15 +1,45 @@
-body {  background-color:powderblue;
-        color: #ba3232;
-        margin: auto;}
-h1, h2, h3, h4, h5, h6{ width: 15%;
+body {  
+    background-color:powderblue;
+    margin: auto;
+    }
+
+h1  { 
+    width: 15%;
     border: 5px solid  #6382e7;
+    color: #ba3232;
     padding: 50px;
     border-radius: 50px;
     text-align: center;
-    margin: auto;}
-table { width:100%;
-        padding: 40px;
-        line-height: 32px;
-        margin: 32px 0;
-        display: inline-block;
-        border: 1px solid #ccc;}
+    margin: auto;
+}
+
+h2 {
+    width: 15%;
+    border: 5px solid  #6382e7;
+    color: #ba3232;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    margin: auto;
+}
+
+form {
+     width:100%;
+     padding: 40px;
+     line-height: 40px;
+     margin: 32px 0;
+     display: inline-block;
+     border: 1px solid #ccc;
+}
+
+img {
+    width:160px;
+    height:160px;
+}
+
+p {
+    width:100%;
+    padding: 10px;
+    line-height: 5px;
+    margin: 5px;
+}
