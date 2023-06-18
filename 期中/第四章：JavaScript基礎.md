@@ -358,3 +358,91 @@ console.log(blockVariable); // ReferenceError: blockVariable is not defined
 在上面的例子中，我們定義了全域範疇中的globalVariable變量。在foo函數中，我們定義了函數範疇中的functionVariable變量和塊範疇中的blockVariable變量。我們可以看到，這些變量僅在它們所屬的範疇內部可見，無法在其他範疇中訪問。
 
 函數是JavaScript中非常重要的概念之一，它們使我們能夠組織和重複使用程式碼，並實現複雜的邏輯。熟悉函數的定義、調用、參數、返回值和範疇的概念是成為一個優秀的JavaScript開發者的關鍵。
+
+### 4.5.10 JavaScript中的事件處理
+
+事件處理在JavaScript中非常重要，它允許我們對用戶操作（如點擊、鍵盤輸入等）做出反應並執行相應的程式碼。
+
+在JavaScript中，我們可以使用事件處理程序（event handler）來處理事件。事件處理程序是一個函數，當特定事件發生時，它將被觸發執行。
+
+以下是一個簡單的示例，展示了如何在HTML元素上設置點擊事件處理程序：
+```html
+<button id="myButton">Click Me</button>
+
+<script>
+  // 獲取按鈕元素
+  const button = document.getElementById('myButton');
+
+  // 定義點擊事件處理程序
+  function handleClick() {
+    alert('Button Clicked!');
+  }
+
+  // 將點擊事件處理程序綁定到按鈕上
+  button.addEventListener('click', handleClick);
+</script>
+```
+
+在上面的示例中，我們首先獲取了id為myButton的按鈕元素。然後，我們定義了一個名為handleClick的函數作為點擊事件的處理程序。最後，我們使用addEventListener方法將點擊事件處理程序綁定到按鈕上。當按鈕被點擊時，handleClick函數將被執行並彈出一個警告框。
+
+除了點擊事件，JavaScript還支持許多其他類型的事件，如鍵盤事件、滑鼠事件、表單事件等。您可以根據需要選擇適合的事件類型並編寫相應的事件處理程序。
+
+事件處理是網頁交互和動態功能的基礎，通過對用戶操作做出反應，我們可以創建更具互動性和響應性的網頁應用程式。深入了解不同類型的事件和相應的處理方式將有助於您更好地掌握JavaScript的能力。
+
+### 4.5.11 JavaScript中的錯誤處理
+
+在開發過程中，我們經常會遇到各種錯誤，如語法錯誤、運行時錯誤、邏輯錯誤等。為了更好地管理這些錯誤，JavaScript提供了一些機制來捕獲和處理它們。
+
+一種常見的錯誤處理機制是使用try-catch語句。該語句允許我們將可能引發錯誤的程式碼包裝在try塊中，並在catch塊中處理錯誤。如果在try塊中發生了錯誤，控制流程將跳轉到catch塊，並執行相應的錯誤處理代碼。
+
+以下是一個示例，展示了如何使用try-catch來處理可能的錯誤：
+```html
+try {
+  // 可能引發錯誤的程式碼
+  const result = someFunction(); // 假設someFunction未定義
+  console.log(result);
+} catch (error) {
+  // 錯誤處理代碼
+  console.error('An error occurred:', error);
+}
+```
+
+在上面的示例中，我們使用try塊將someFunction()函數的調用包裝起來。如果someFunction()未定義或引發了錯誤，控制流程將跳轉到catch塊，並執行錯誤處理代碼。在這個例子中，我們簡單地將錯誤消息打印到控制台。
+
+除了try-catch語句，JavaScript還提供了其他一些錯誤處理的機制，如throw語句用於手動引發錯誤，finally語句用於定義無論是否發生錯誤都要執行的代碼等。這些機制使我們能夠更靈活地處理錯誤並維護程式碼的穩定性。
+
+了解錯誤處理機制並適當地應用它們，可以幫助我們識別和解決問題，提高程式碼的可靠性和健壯性。
+
+## 4.6. JavaScript的模組化
+
+在大型的JavaScript應用中，將程式碼組織成可重複使用的模組是非常重要的。模組化使我們能夠將功能分解為獨立的部分，並根據需要引入和使用這些部分。
+
+在傳統的JavaScript中，缺乏模組化的支援，開發者需要手動管理程式碼的依賴關係和載入順序，這往往會導致程式碼的複雜性和可維護性下降。
+
+然而，現代的JavaScript語言和環境已經引入了模組化的概念和相關的標準，如CommonJS、AMD、ES Modules等。
+
+ES Modules（ECMAScript Modules）是目前最廣泛支援的模組化標準，它已經被現代的瀏覽器和Node.js所支援。
+
+使用ES Modules，我們可以將JavaScript程式碼拆分為多個模組，每個模組有自己的作用域並可以導出（export）和引入（import）需要的內容。
+
+以下是一個簡單的示例，展示了如何在JavaScript中使用ES Modules：
+```html
+// 檔案：math.js
+export function add(a, b) {
+  return a + b;
+}
+
+export function subtract(a, b) {
+  return a - b;
+}
+
+// 檔案：main.js
+import { add, subtract } from './math.js';
+
+console.log(add(2, 3)); // 輸出：5
+console.log(subtract(5, 2)); // 輸出：3
+```
+
+在上面的示例中，我們將數學相關的功能封裝在一個math.js的模組中，並使用export關鍵字導出add和subtract函數。然後，在main.js中使用import關鍵字引入需要的函數，並可以直接使用它們。
+
+透過模組化，我們可以更好地組織和管理程式碼，使程式碼具有更好的可讀性、可維護性和可擴展性。同時，模組化也促進了代碼的重用和協作開發，使開發過程更加高效和可靠。
