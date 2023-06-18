@@ -29,6 +29,8 @@ function playGame(playerChoice) {
     else {
         result = '電腦贏了！';
     }
-
+    document.addEventListener('DOMContentLoaded', function() {
+         document.getElementById('choices').style.visibility = 'hidden';
+        });
     document.getElementById('result').textContent = `你選擇了 ${playerChoice}，電腦選擇了 ${computerChoice}。${result}`;
 }

@@ -28,6 +28,7 @@ button {
 
 #choices {
     margin-top: 50px;
+    visibility: hidden
 }
 
 #choices img {
