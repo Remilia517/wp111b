@@ -1,12 +1,12 @@
-const rockBtn = document.getElementById('rock');
-const paperBtn = document.getElementById('paper');
-const scissorsBtn = document.getElementById('scissors');
+const Rbtn = document.getElementById('rock');
+const Pbtn = document.getElementById('paper');
+const Sbtn = document.getElementById('scissors');
 const playerChoiceImg = document.getElementById('player-choice');
 const computerChoiceImg = document.getElementById('computer-choice');
 
-rockBtn.addEventListener('click', () => playGame('rock'));
-paperBtn.addEventListener('click', () => playGame('paper'));
-scissorsBtn.addEventListener('click', () => playGame('scissors'));
+Rbtn.addEventListener('click', () => playGame('rock'));
+Pbtn.addEventListener('click', () => playGame('paper'));
+Sbtn.addEventListener('click', () => playGame('scissors'));
 
 function playGame(playerChoice) {
     const choices = ['rock', 'paper', 'scissors'];
@@ -29,6 +29,6 @@ function playGame(playerChoice) {
     else {
         result = '電腦贏了！';
     }
-
-    document.getElementById('result').textContent = `你選擇了 ${playerChoice}，電腦選擇了 ${computerChoice}。${result}`;
+ 
+    document.getElementById('result').textContent = `你選擇了 ${playerChoice}.png，電腦選擇了 ${computerChoice}.png。<br/>${result}`;
 }
